@@ -1,3 +1,19 @@
+/* selector */
+* h1 {
+    text-align: center;
+    color:  white;
+    font-family: 'Playfair Display', serif;
+}
+
+* a {
+    text-decoration: none;
+}
+
+* p {
+    font-family: 'Inter', serif;
+}
+
+
 /* =================== HEADER ======================== */
 /* Шапка */
 header {
@@ -6,14 +22,19 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 15px 20px;
-    background-color: #fff;
+    background-color: rgb(2,4,19);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+
+/* Надпись */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #d3531a;
+    color: #D4AF37;;
+}
+.logo:hover{
+    color: white;
 }
 
 /* Навигационное меню */
@@ -27,7 +48,7 @@ header {
 
 .nav-list a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -126,9 +147,105 @@ header {
     transform: rotate(-135deg);
 }
 
+
+
+
+/* =================== BODY ======================== */
+main{
+    background-color: rgb(2,4,19);
+}
+
+
+/* ============== home/title/visuable start================= */
+.home {
+    text-align: center;
+}
+
+.home h1 {
+    color: white;
+}
+.home a {
+    padding: 10px;
+    color: white
+}
+
+.home a:hover {
+    color: #232021;
+}
+
+.home span{
+    color: #D4AF37;
+}
+.home p{
+    size: 30px;
+    font: lighter;
+    color: #9da1aa;
+}
+
+/* ============== about ============== */
+.about .ab-title{
+    text-align: left;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.about span {
+    color: #D4AF37;
+}
+
+.about-content p {
+    color: #9da1aa;
+}
+
+
+/* ============== manufacturers ============== */
+.manufacturers{
+    background-color: rgb(11,16,29);
+}
+.manufacturers .mn-title{
+    text-align: center;
+    color: white;
+}
+.manufacturers p {
+    text-align: center;
+    color: #9da1aa;
+}
+
+
+
+
+
+
+/* ============== feedbak ============== */
+
+
+
+
+
+
 /* ====================== footer ====================== */
+.footer {
+    background-color: #050810;
+}
+.footer a {
+    color: #1d293d;
+}
+.footer h4 {
+    color: white;
+    margin: 4px;
+}
 
 
+.footer li{
+    list-style-type: none;
+    color:  #1d293d;
+}
+.footer hr {
+    border-color:#1d293d;
+}
+.footer p{
+    color:  #1d293d;
+} 
 
 /* ======================== адоптивность ======================== */
 @media (max-width: 768px) {
