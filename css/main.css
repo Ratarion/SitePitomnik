@@ -503,10 +503,6 @@ section {
     }
 }
 
-
-
-
-
 /* ===================== ПОМЕТЫ — СЛАЙДЕР (ПО ЦЕНТРУ) ===================== */
 .litters-slider {
     position: relative;
@@ -730,4 +726,115 @@ section {
 @keyframes fall {
     0%   { transform: translateY(-100px) rotate(0deg); }
     100% { transform: translateY(110vh) rotate(360deg); }
+}
+
+
+/* ===================== ПРОИЗВОДИТЕЛИ — СЛАЙДЕР ===================== */
+.producers-slider {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.producers-wrapper {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.producer-card {
+    min-width: 100%;
+    background: #11141f;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 992px) {
+    .producer-card {
+        min-width: calc(50% - 15px);   /* 2 карточки на ПК */
+    }
+}
+
+.producer-card:hover {
+    transform: translateY(-8px);
+}
+
+.dog-photo {
+    height: 360px;
+    background-size: cover;
+    background-position: center;
+}
+
+.producer-card h4 {
+    font-size: 1.75rem;
+    margin: 25px 30px 10px;
+    color: #e0e0e5;
+}
+
+.producer-card p {
+    margin: 0 30px 30px;
+    color: #9da1aa;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+/* Стрелки */
+.producer-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 64px;
+    height: 64px;
+    border: none;
+    background: linear-gradient(90deg, #c70036, #d4af37);
+    color: #0a0b14;
+    font-size: 2.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(199, 0, 54, 0.45);
+}
+
+.producer-prev { left: 0; }
+.producer-next { right: 0; }
+
+.producer-arrow:hover {
+    transform: translateY(-50%) scale(1.12);
+}
+
+/* Точки */
+.producer-dots {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.producer-dot {
+    width: 13px;
+    height: 13px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.producer-dot.active {
+    background: #d4af37;
+    width: 32px;
+    border-radius: 30px;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .producers-slider { padding: 0 20px; }
+    .producer-arrow {
+        width: 52px;
+        height: 52px;
+        font-size: 2.4rem;
+    }
+    .dog-photo { height: 280px; }
 }

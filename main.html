@@ -91,23 +91,39 @@
         <section class="manufacturers" id="manufacturers">
             <h2 class="section-title">Наши производители</h2>
             <p class="section-desc">Гордость питомника. Выдающиеся ирландские сеттеры, проверенные по здоровью и психике, обладатели наивысших мировых титулов.</p>
-            <div class="producers-grid" id="producers-grid">
-                <div class="producer-card">
-                    <div class="dog-photo" style="background-image: url('https://picsum.photos/id/1015/600/600')"></div>
-                    <h4>Ascending Star Orion</h4>
-                    <p>Многократный чемпион России и Европы</p>
+        
+            <div class="producers-slider">
+                <div class="producers-wrapper">
+                
+                    <!-- Карточка 1 -->
+                    <div class="producer-card">
+                        <div class="dog-photo" style="background-image: url('https://picsum.photos/id/1015/800/600')"></div>
+                        <h4>Ascending Star Orion</h4>
+                        <p>Многократный чемпион России и Европы</p>
+                    </div>
+                
+                    <!-- Карточка 2 -->
+                    <div class="producer-card">
+                        <div class="dog-photo" style="background-image: url('https://picsum.photos/id/1005/800/600')"></div>
+                        <h4>Ascending Star Lyra</h4>
+                        <p>Чемпионка мира по рабочим качествам</p>
+                    </div>
+                
+                    <!-- Добавляй сюда новые карточки точно так же (сколько угодно) -->
+                
                 </div>
-                <div class="producer-card">
-                    <div class="dog-photo" style="background-image: url('https://picsum.photos/id/1005/600/600')"></div>
-                    <h4>Ascending Star Lyra</h4>
-                    <p>Чемпионка мира по рабочим качествам</p>
-                </div>
+            
+                <!-- Стрелки -->
+                <button class="producer-arrow producer-prev" aria-label="Предыдущий">‹</button>
+                <button class="producer-arrow producer-next" aria-label="Следующий">›</button>
+            
+                <!-- Точки -->
+                <div class="producer-dots"></div>
             </div>
         </section>
-
         <!-- ПОМЕТЫ -->
         <section class="litters" id="litters">
-            <h2 class="section-title">Актуальные пометы</h2>
+            <h2 class="section-title">Пометы</h2>
             <p class="section-desc">Мы тщательно подбираем пары для получения здорового, красивого и типичного потомства. Вы можете забронировать щенка или записаться в лист ожидания.</p>
         
             <div class="litters-slider">
@@ -209,6 +225,7 @@
         <!-- ОТЗЫВЫ -->
         <section class="feedback" id="feedback">
             <h2 class="section-title">Отзывы владельцев</h2>
+            <!-- Добавишь позже через админку -->
             <p style="text-align:center; color:#9da1aa; margin-top:20px;">Раздел отзывов будет заполнен в ближайшее время</p>
         </section>
     </main>

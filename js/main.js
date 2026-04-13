@@ -173,3 +173,47 @@ function createFallingStars() {
 
 // Запускаем после загрузки
 document.addEventListener('DOMContentLoaded', createFallingStars);
+
+
+
+// Слайдер производителей
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.producers-slider');
+    if (!slider) return;
+
+    const wrapper = slider.querySelector('.producers-wrapper');
+    const cards = slider.querySelectorAll('.producer-card');
+    const prevBtn = slider.querySelector('.producer-prev');
+    const nextBtn = slider.querySelector('.producer-next');
+    const dotsContainer = slider.querySelector('.producer-dots');
+
+    let currentIndex = 0;
+    const total = cards.length;
+
+    // Создаём точки
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('producer-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+    const dots = dotsContainer.querySelectorAll('.producer-dot');
+
+    function goToSlide(index) {
+        currentIndex = (index + total) % total;
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Автопрокрутка
+    let auto = setInterval(() => goToSlide(currentIndex + 1), 5000);
+    slider.addEventListener('mouseenter', () => clearInterval(auto));
+    slider.addEventListener('mouseleave', () => { auto = setInterval(() => goToSlide(currentIndex + 1), 5000); });
+
+    goToSlide(0);
+});
