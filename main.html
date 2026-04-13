@@ -1,4 +1,3 @@
-<!-- main page -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,156 +8,218 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <title>Питомник Ascending Star</title>
 </head>
-
-<!-- Основное тело -->
 <body>
-    <!-- the upper part  -->
+
+    <!-- HEADER -->
     <header>
-        <!-- TITELE/Титул -->
-        <div class="logo">Ascending Star</div>
-        <!-- NAV-CONTENT -->
+        <div class="logo">
+            Ascending Star
+            <span class="subtitle">IRISH RED SETTERS</span>
+        </div>
+
         <nav>
             <ul class="nav-list">
+                <li><a href="#">Главная</a></li>
                 <li><a href="#about">О питомнике</a></li>
                 <li><a href="#manufacturers">Производители</a></li>
                 <li><a href="#litters">Пометы</a></li>
                 <li><a href="#gallery">Галерея</a></li>
                 <li><a href="#contact">Контакты</a></li>
+                
+                <li class="mobile-call-wrapper">
+                    <a href="#contact" class="nav-list-call-btn">
+                        <span class="phone-icon">📞</span> Позвонить
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <a href="#telephone">Позвонить</a>
+        <a href="#contact" class="header-call-btn">
+            <span class="phone-icon">📞</span> Позвонить
+        </a>
 
-        <!-- ICON -->
         <div id="nav-icon">
             <span></span><span></span><span></span>
         </div>
     </header>
 
-    <!-- main information -->
+    
+
     <main>
-        <!-- title/Встречаюшая часть -->
+        <!-- HERO -->
         <section class="home">
-            <div>
+            <div class="hero-content">
+                <div class="badge">МОНОПОРОДНЫЕ ИРЛАНДСКИЕ СЕТТЕРЫ</div>
                 <h1>Питомник<br><span>Ascending Star</span></h1>
-                <p>
-                    Монопородные ирландские сеттеры мирового уровня с 2024 года. 
-                    Роскошь, интеллект и преданность в каждой собаке.
-                </p>
-                <a href="#litters">Посмотреть пометы ></a>
-                <a href="#contact">Контакты</a>
+                <p>Монопородные ирландские сеттеры мирового уровня с 2018 года.<br>Роскошь, интеллект и преданность в каждой собаке.</p>
+                
+                <div class="buttons">
+                    <a href="#litters" class="nav-btnlitters">Посмотреть пометы <span>›</span></a>
+                    <a href="#telephone" class="nav-btncontact">Позвонить</a>
+                </div>
             </div>
         </section>
 
-
-        <!-- file about -->
+        <!-- О ПИТОМНИКЕ -->
         <section class="about" id="about">
-            <div class="about">
-                <h1 class="ab-title">О питомнике <span>Ascending Star</span></h1>
-                <hr class="gold-line">
-            </div>
+            <div class="about-container">
+                <h2 class="section-title">О питомнике <span>Ascending Star</span></h2>
+                <p>Питомник "Ascending Star" был основан в 2018 году владельцем Н.В. Зуевым с одной главной целью — сохранение и улучшение уникальных качеств ирландского красного сеттера. Мы стремимся к идеальному балансу между грацией, здоровьем и непревзойдённым охотничьим инстинктом.</p>
+                <p>За годы работы наши выпускники стали не только любимыми членами семей по всему миру, но и завоевали десятки титулов на престижнейших выставках.</p>
 
-            <div class="about-content">
-                <p>
-                    Питомник "Ascending Star" был основан в 2024 году владельцем 
-                    Николаем Зуевым с одной главной целью - сохранение и улучшение уникальных 
-                    качеств ирландского красного сеттера. 
-                    Мы стремимся к идеальному балансу между грацией, 
-                    здоровьем и непревзойденным охотничьим инстинктом.
-                </p>
-                <p>
-                    За годы работы наши выпускники стали не только любимыми членами семей по всему миру, 
-                    но и завоевали десятки титулов на престижнейших выставках. 
-                    Мы гордимся тем, что каждая собака с приставкой Ascending Star - это эталон породы.
-                </p>
-            </div>
-        </section>
-
-        <!-- file litters/пометы-->
-        <section class="litters" id="litters">    
-            <div class="litters">
-                <h1>Пометы</h1>
-                <hr class="gold-line">
-                <p>Мы тщательно подбираем пары для получения здорового, красивого и типичного потомства.</p>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="icon">⭐</div>
+                        <h4>Выдающиеся крови</h4>
+                        <p>Наши собаки происходят от лучших европейских линий, многократные чемпионы.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🏆</div>
+                        <h4>Мировой уровень</h4>
+                        <p>Призёры международных выставок и обладатели рабочих дипломов.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">❤️</div>
+                        <h4>Любовь и забота</h4>
+                        <p>Каждый щенок растёт в семье, получая максимум внимания и социализации.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- file manufacturers -->
+        <!-- ПРОИЗВОДИТЕЛИ -->
         <section class="manufacturers" id="manufacturers">
-            <div class="manufacturers">
-                <h1 class="mn-title">Наши производители</h1>
-                <hr class="gold-line">
-
-                <p>
-                    Гордость питомника. 
-                    Выдающиеся ирландские сеттеры, проверенные по здоровью и психике, о
-                    бладатели наивысших мировых титулов.
-                </p>
-            </div>
-
-            <!-- Пока пустое место под будущие карточки производителей -->
+            <h2 class="section-title">Наши производители</h2>
+            <p class="section-desc">Гордость питомника. Выдающиеся ирландские сеттеры, проверенные по здоровью и психике, обладатели наивысших мировых титулов.</p>
             <div class="producers-grid" id="producers-grid">
-                <!-- Сюда позже добавим карточки собак -->
+                <!-- JS или вручную добавишь карточки позже -->
+                <div class="producer-card"> <!-- пример -->
+                    <div class="dog-photo" style="background-image: url('https://picsum.photos/id/1015/600/600')"></div>
+                    <h4>Ascending Star Orion</h4>
+                    <p>Многократный чемпион России и Европы</p>
+                </div>
+                <div class="producer-card">
+                    <div class="dog-photo" style="background-image: url('https://picsum.photos/id/1005/600/600')"></div>
+                    <h4>Ascending Star Lyra</h4>
+                    <p>Чемпионка мира по рабочим качествам</p>
+                </div>
             </div>
         </section>
 
+        <!-- ПОМЕТЫ -->
+        <section class="litters" id="litters">
+            <h2 class="section-title">Актуальные пометы</h2>
+            <p class="section-desc">Мы тщательно подбираем пары для получения здорового, красивого и типичного потомства. Вы можете забронировать щенка или записаться в лист ожидания.</p>
 
-        <!-- file gallery -->
-        <section class="gallary" id="gallery">
-            <div class="conntent">
-                <h1>Галерея</h1>
-                <hr class="gold-line">
+            <div class="litters-grid">
+                <!-- Карточка 1 (как в Figma) -->
+                <div class="litter-card">
+                    <div class="photo">
+                        <span class="status">ДОСТУПНЫ 2 МАЛЬЧИКА И 1 ДЕВОЧКА</span>
+                        <img src="https://picsum.photos/id/1016/800/600" alt="Orion x Lyra">
+                    </div>
+                    <div class="info">
+                        <h4>Ascending Star Orion x Ascending Star Lyra</h4>
+                        <div class="meta">
+                            <span>📅 12 Марта 2026</span>
+                            <span>👥 Доступны 2 мальчика и 1 девочка</span>
+                            <span>💰 От 150 000 ₽</span>
+                        </div>
+                        <a href="#" class="book-btn">Забронировать →</a>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="litter-card">
+                    <div class="photo">
+                        <span class="status">ОТКРЫТО БРОНИРОВАНИЕ</span>
+                        <img src="https://picsum.photos/id/102/800/600" alt="Sirius x Cassiopeia">
+                    </div>
+                    <div class="info">
+                        <h4>Ascending Star Sirius x Ascending Star Cassiopeia</h4>
+                        <div class="meta">
+                            <span>📅 05 Апреля 2026</span>
+                            <span>👥 Открыто бронирование</span>
+                            <span>💰 От 180 000 ₽</span>
+                        </div>
+                        <a href="#" class="book-btn">Забронировать →</a>
+                    </div>
+                </div>
             </div>
         </section>
-        
 
-        <!-- file сhampions -->
-        <section class="сhampions" id="сhampions">
-            <div class="content-сhampions">
-                <h1>Наши чемпионы</h1>
-                <hr class="gold-line">
+        <!-- ГАЛЕРЕЯ -->
+        <section class="gallery" id="gallery">
+            <h2 class="section-title">Галерея</h2>
+            
+            <div class="gallery-slider">
+                <div class="slides-wrapper">
+                    
+                    <div class="slide">
+                        <img src="asset/img/show.jpg" alt="Ирландский сеттер на выставке">
+                    </div>
+                    <div class="slide">
+                        <img src="asset/img/tour.jpg" alt="Ирландский сеттер в поле">
+                    </div>
+                    <div class="slide">
+                        <img src="asset/img/tour1.jpg" alt="Ирландский сеттер на прогулке">
+                    </div>
+                    <div class="slide">
+                        <img src="asset/img/tour2.jpg" alt="Ирландский сеттер крупный план">
+                    </div>
+                    <div class="slide">
+                        <img src="asset/img/tour2.jpg" alt="Ирландский сеттер крупный план">
+                    </div>
+                
+                </div>
+            
+                <!-- Стрелки -->
+                <button class="slider-arrow slider-prev" aria-label="Предыдущее фото">‹</button>
+                <button class="slider-arrow slider-next" aria-label="Следующее фото">›</button>
+            
+                <!-- Точки -->
+                <div class="slider-dots"></div>
             </div>
         </section>
-        
 
-        <!-- file feedback -->
+        <!-- ОТЗЫВЫ -->
         <section class="feedback" id="feedback">
-            <div class="content-feedback">
-                <h1>Отзывы Владельцев</h1>
-                <hr class="gold-line">
-            </div>
+            <h2 class="section-title">Отзывы владельцев</h2>
+            <!-- Добавишь позже через админку -->
+            <p style="text-align:center; color:#9da1aa; margin-top:20px;">Раздел отзывов будет заполнен в ближайшее время</p>
         </section>
-        
     </main>
 
-
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <h4>Ascending <span>Star</span></h4>
-        <p>Монопородный питомник ирландских красных сеттеров. Разведение собак шоу и рабочего класса мирового уровня с 2024 года.</p>
+        <p>Монопородный питомник ирландских красных сеттеров. Разведение собак шоу и рабочего класса мирового уровня с 2018 года.</p>
 
-        <ul class="footer-nav-list">
-            <h4>Навигация</h4>
-            <li><a href="#about">О питомнике</a></li>
-            <li><a href="#manufacturers">Производители</a></li>
-            <li><a href="#litters">Пометы</a></li>
-            <li><a href="#gallery">Галерея</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-
-        <div class="contact" id="contact">
-            <ul class="footer-contact-content">
-                <h4>Контакты</h4>
-                <li><a href="https://vk.com/club226073908">VK сообщество</a></li>
-                <li><a href="https://vk.com/id139028587">VK Ирина Зуева</a></li>
-                <li id="telephone">📞 Телефон: <a>+7 (908) 737-37-34</a></li>
-                <li>📍 Адрес:</li>
-            </ul>
+        <div class="footer-columns">
+            <div>
+                <h5>НАВИГАЦИЯ</h5>
+                <ul>
+                    <li><a href="#about">О питомнике</a></li>
+                    <li><a href="#manufacturers">Производители</a></li>
+                    <li><a href="#litters">Пометы</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#feedback">Отзывы</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>КОНТАКТЫ</h5>
+                <ul class="contact-list">
+                    <li>📞 +7 (908) 737-37-34</li>
+                    <li>✉️ info@ascendingstar.ru</li>
+                    <li>📍 Адрес (уточняйте по телефону)</li>
+                </ul>
+            </div>
         </div>
-        <hr>
-        <p>© 2024 Питомник Ascending Star. Все права защищены.</p>
-    </footer>
-</body>
 
-<script src="js/main.js"></script>
+        <hr>
+        <p>© 2026 Питомник Ascending Star. Все права защищены.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
