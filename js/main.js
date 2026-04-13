@@ -97,3 +97,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// Слайдер пометов — одна карточка по центру
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.litters-slider');
+    if (!slider) return;
+
+    const wrapper = slider.querySelector('.litters-wrapper');
+    const cards = slider.querySelectorAll('.litter-card');
+    const prevBtn = slider.querySelector('.litter-prev');
+    const nextBtn = slider.querySelector('.litter-next');
+    const dotsContainer = slider.querySelector('.litter-dots');
+
+    let currentIndex = 0;
+    const total = cards.length;
+
+    // Создаём точки
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('litter-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+    const dots = dotsContainer.querySelectorAll('.litter-dot');
+
+    function goToSlide(index) {
+        currentIndex = (index + total) % total;
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Автопрокрутка
+    let autoInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+
+    slider.addEventListener('mouseenter', () => clearInterval(autoInterval));
+    slider.addEventListener('mouseleave', () => {
+        autoInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
+    });
+
+    // Инициализация
+    goToSlide(0);
+});
+
+
+// Падающие звёздочки в Hero
+function createFallingStars() {
+    const container = document.querySelector('.stars-container');
+    if (!container) return;
+
+    const starCount = 45;   // количество звёзд
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.textContent = '✦';           // красивая звёздочка
+
+        // Случайное положение и задержка
+        const left = Math.random() * 100;
+        const delay = Math.random() * 15;
+        const duration = 12 + Math.random() * 18;   // от 12 до 30 секунд
+
+        star.style.left = `${left}vw`;
+        star.style.animationDelay = `-${delay}s`;
+        star.style.animationDuration = `${duration}s`;
+
+        container.appendChild(star);
+    }
+}
+
+// Запускаем после загрузки
+document.addEventListener('DOMContentLoaded', createFallingStars);

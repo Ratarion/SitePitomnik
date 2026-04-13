@@ -14,7 +14,6 @@
     <header>
         <div class="logo">
             Ascending Star
-            <span class="subtitle">IRISH RED SETTERS</span>
         </div>
 
         <nav>
@@ -48,14 +47,16 @@
     <main>
         <!-- HERO -->
         <section class="home">
+            <div class="stars-container"></div>
+            
             <div class="hero-content">
                 <div class="badge">МОНОПОРОДНЫЕ ИРЛАНДСКИЕ СЕТТЕРЫ</div>
                 <h1>Питомник<br><span>Ascending Star</span></h1>
-                <p>Монопородные ирландские сеттеры мирового уровня с 2018 года.<br>Роскошь, интеллект и преданность в каждой собаке.</p>
+                <p>Монопородные ирландские сеттеры мирового уровня с 2017 года.<br>Роскошь, интеллект и преданность в каждой собаке.</p>
                 
                 <div class="buttons">
                     <a href="#litters" class="nav-btnlitters">Посмотреть пометы <span>›</span></a>
-                    <a href="#telephone" class="nav-btncontact">Позвонить</a>
+                    <a href="#telephone" class="nav-btncontact"><img src="/asset/call.svg">Позвонить</a>
                 </div>
             </div>
         </section>
@@ -64,7 +65,7 @@
         <section class="about" id="about">
             <div class="about-container">
                 <h2 class="section-title">О питомнике <span>Ascending Star</span></h2>
-                <p>Питомник "Ascending Star" был основан в 2018 году владельцем Н.В. Зуевым с одной главной целью — сохранение и улучшение уникальных качеств ирландского красного сеттера. Мы стремимся к идеальному балансу между грацией, здоровьем и непревзойдённым охотничьим инстинктом.</p>
+                <p>Питомник "Ascending Star" был основан в 2017 году владельцем Николаевым Зуевым с одной главной целью — сохранение и улучшение уникальных качеств ирландского красного сеттера. Мы стремимся к идеальному балансу между грацией, здоровьем и непревзойдённым охотничьим инстинктом.</p>
                 <p>За годы работы наши выпускники стали не только любимыми членами семей по всему миру, но и завоевали десятки титулов на престижнейших выставках.</p>
 
                 <div class="features">
@@ -110,41 +111,58 @@
         <section class="litters" id="litters">
             <h2 class="section-title">Актуальные пометы</h2>
             <p class="section-desc">Мы тщательно подбираем пары для получения здорового, красивого и типичного потомства. Вы можете забронировать щенка или записаться в лист ожидания.</p>
-
-            <div class="litters-grid">
-                <!-- Карточка 1 (как в Figma) -->
-                <div class="litter-card">
-                    <div class="photo">
-                        <span class="status">ДОСТУПНЫ 2 МАЛЬЧИКА И 1 ДЕВОЧКА</span>
-                        <img src="https://picsum.photos/id/1016/800/600" alt="Orion x Lyra">
-                    </div>
-                    <div class="info">
+        
+            <div class="litters-slider">
+                <div class="litters-wrapper">
+                
+                    <!-- Карточка 1 -->
+                    <div class="litter-card">
                         <h4>Ascending Star Orion x Ascending Star Lyra</h4>
                         <div class="meta">
                             <span>📅 12 Марта 2026</span>
                             <span>👥 Доступны 2 мальчика и 1 девочка</span>
                             <span>💰 От 150 000 ₽</span>
                         </div>
-                        <a href="#" class="book-btn">Забронировать →</a>
                     </div>
-                </div>
-
-                <!-- Карточка 2 -->
-                <div class="litter-card">
-                    <div class="photo">
-                        <span class="status">ОТКРЫТО БРОНИРОВАНИЕ</span>
-                        <img src="https://picsum.photos/id/102/800/600" alt="Sirius x Cassiopeia">
-                    </div>
-                    <div class="info">
+                
+                    <!-- Карточка 2 -->
+                    <div class="litter-card">
                         <h4>Ascending Star Sirius x Ascending Star Cassiopeia</h4>
                         <div class="meta">
                             <span>📅 05 Апреля 2026</span>
                             <span>👥 Открыто бронирование</span>
                             <span>💰 От 180 000 ₽</span>
                         </div>
-                        <a href="#" class="book-btn">Забронировать →</a>
+                    </div>
+                
+                    <!-- Карточка 2 -->
+                    <div class="litter-card">
+                        <h4>Ascending Star Sirius x Ascending Star Cassiopeia</h4>
+                        <div class="meta">
+                            <span>📅 05 Апреля 2026</span>
+                            <span>👥 Открыто бронирование</span>
+                            <span>💰 От 180 000 ₽</span>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="litter-card">
+                        <h4>Ascending Star Sirius x Ascending Star Cassiopeia</h4>
+                        <img src>
+                        <div class="meta">
+                            <span>📅 05 Апреля 2026</span>
+                            <span>👥 Открыто бронирование</span>
+                            <span>💰 От 180 000 ₽</span>
+                        </div>
                     </div>
                 </div>
+            
+                <!-- Стрелки (как в макете) -->
+                <button class="litter-arrow litter-prev" aria-label="Предыдущий">‹</button>
+                <button class="litter-arrow litter-next" aria-label="Следующий">›</button>
+            
+                <!-- Точки -->
+                <div class="litter-dots"></div>
             </div>
         </section>
 
@@ -159,16 +177,16 @@
                         <img src="asset/img/show.jpg" alt="Ирландский сеттер на выставке">
                     </div>
                     <div class="slide">
-                        <img src="asset/img/tour.jpg" alt="Ирландский сеттер в поле">
+                        <img src="asset/img/tour/tour.jpg" alt="Ирландский сеттер в поле">
                     </div>
                     <div class="slide">
-                        <img src="asset/img/tour1.jpg" alt="Ирландский сеттер на прогулке">
+                        <img src="asset/img/tour/tour1.jpg" alt="Ирландский сеттер на прогулке">
                     </div>
                     <div class="slide">
-                        <img src="asset/img/tour2.jpg" alt="Ирландский сеттер крупный план">
+                        <img src="asset/img/tour/tour2.jpg" alt="Ирландский сеттер крупный план">
                     </div>
                     <div class="slide">
-                        <img src="asset/img/tour2.jpg" alt="Ирландский сеттер крупный план">
+                        <img src="asset/img/tour/tour2.jpg" alt="Ирландский сеттер крупный план">
                     </div>
                 
                 </div>
@@ -193,7 +211,7 @@
     <!-- FOOTER -->
     <footer class="footer" id="contact">
         <h4>Ascending <span>Star</span></h4>
-        <p>Монопородный питомник ирландских красных сеттеров. Разведение собак шоу и рабочего класса мирового уровня с 2018 года.</p>
+        <p>Монопородный питомник ирландских красных сеттеров. Разведение собак шоу и рабочего класса мирового уровня с 2017 года.</p>
 
         <div class="footer-columns">
             <div>
@@ -210,8 +228,8 @@
                 <h5>КОНТАКТЫ</h5>
                 <ul class="contact-list">
                     <li>📞 +7 (908) 737-37-34</li>
-                    <li>✉️ info@ascendingstar.ru</li>
-                    <li>📍 Адрес (уточняйте по телефону)</li>
+                    <li>✉️ mail Ascending Star</li>
+                    <li>📍 Нижегородская обл. Чкаловский район, дер Афанасьево, д. 5 </li>
                 </ul>
             </div>
         </div>
