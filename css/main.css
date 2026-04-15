@@ -775,6 +775,12 @@ section {
 }
 
 .dog-photo {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+}
+
+.dog-photo img {
     height: 360px;
     background-size: cover;
     background-position: center;
