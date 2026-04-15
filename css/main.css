@@ -43,6 +43,7 @@ header {
 
 .logo {
     font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: #d4af37;
     line-height: 1;
@@ -82,8 +83,11 @@ header {
     line-height: 1.1;
     margin-bottom: 20px;
 }
+
 .home h1 span {
-    color: #d4af37;
+    background: linear-gradient(90deg, rgba(214, 178, 60) 0%, rgba(253, 228, 131)100%);
+    background-clip: text;
+    color: transparent;
 }
 
 .home p {
@@ -156,6 +160,19 @@ header {
 /* ===================== SECTIONS ===================== */
 section {
     padding: 100px 5%;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+.section-title span {
+    color: #d4af37;
+
 }
 
 .section-title {
@@ -531,10 +548,10 @@ section {
     /* flex-direction: column; */
 }
 
-/* @media (min-width: 992px) { */
-    /* .litter-card { */
-        /* min-width: calc(50% - 15px);   2 карточки на ПК */
-    /* }
+/* @media (min-width: 992px) {
+    .litter-card {
+    min-width: calc(50% - 15px);
+    }
 } */
 
 .litter-card .photo {
@@ -752,11 +769,6 @@ section {
     transition: transform 0.3s ease;
 }
 
-@media (min-width: 992px) {
-    .producer-card {
-        min-width: calc(50% - 15px);   /* 2 карточки на ПК */
-    }
-}
 
 .producer-card:hover {
     transform: translateY(-8px);

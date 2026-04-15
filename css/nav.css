@@ -32,6 +32,15 @@
     box-shadow: 0 12px 35px rgba(199, 0, 54, 0.6);
 }
 
+
+.header-call-btn img {
+    width: 26px;
+    height: 26px;
+    filter: brightness(0) invert(1);   /* делает иконку полностью белой */
+    transition: filter 0.3s ease;
+}
+
+
 /* ПОЛНОЭКРАННОЕ МОБИЛЬНОЕ МЕНЮ */
 .nav-list {
     position: fixed;
@@ -55,7 +64,7 @@
 
     touch-action: pan-y;           /* запрещает горизонтальный свайп */
     box-sizing: border-box;
-    gap: 15px;                     /* нормальный отступ между пунктами */
+    gap: 5px;                     /* нормальный отступ между пунктами */
 }
 
 .nav-list.show {
@@ -108,7 +117,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 16px;
     
     width: 100%;
     padding: 10px 40px;
@@ -126,6 +135,15 @@
     transition: all 0.3s ease;
     text-decoration: none;
 }
+
+.nav-list-call-btn img {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1);   /* делает иконку полностью белой */
+    transition: filter 0.3s ease;
+}
+
+
 
 .nav-list-call-btn:hover {
     transform: translateY(-3px);
