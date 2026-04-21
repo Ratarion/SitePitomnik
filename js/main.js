@@ -24,16 +24,35 @@ navLinks.forEach(link => {
 });
 
 
-// Слайдер галереи
+// ===================== СЛАЙДЕР ГАЛЕРЕИ (ДИНАМИЧЕСКИЙ) =====================
 document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.gallery-slider');
-    if (!slider) return;
+    const gallerySlider = document.querySelector('.gallery-slider');
+    if (!gallerySlider) return;
 
-    const wrapper = slider.querySelector('.slides-wrapper');
-    const slides = slider.querySelectorAll('.slide');
-    const prevBtn = slider.querySelector('.slider-prev');
-    const nextBtn = slider.querySelector('.slider-next');
-    const dotsContainer = slider.querySelector('.slider-dots');
+    const wrapper = document.getElementById('gallery-slides');
+
+    // ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
+    const galleryImages = [
+        "asset/img/tour/tour.jpg",
+        "asset/img/tour/tour1.jpg",
+        "asset/img/tour/tour2.jpg",
+        "asset/gallery/Artemis hunting is my passion5.jpg",
+    ];
+    // ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
+
+    // Автоматически создаём все слайды
+    wrapper.innerHTML = ''; // очищаем на всякий случай
+    galleryImages.forEach(src => {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        slide.innerHTML = `<img src="${src}" alt="Ирландский сеттер">`;
+        wrapper.appendChild(slide);
+    });
+
+    const slides = wrapper.querySelectorAll('.slide');
+    const prevBtn = gallerySlider.querySelector('.slider-prev');
+    const nextBtn = gallerySlider.querySelector('.slider-next');
+    const dotsContainer = gallerySlider.querySelector('.slider-dots');
 
     let currentIndex = 0;
     const totalSlides = slides.length;
@@ -50,52 +69,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const dots = dotsContainer.querySelectorAll('.slider-dot');
 
     function goToSlide(index) {
-        currentIndex = index;
+        currentIndex = (index + totalSlides) % totalSlides;
         wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
         dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
     }
 
-    // Кнопки
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        goToSlide(currentIndex);
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(currentIndex);
-    });
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
     // Автопрокрутка
     let autoplayInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(currentIndex);
+        goToSlide(currentIndex + 1);
     }, 4000);
 
-    // Пауза при наведении
-    slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-    slider.addEventListener('mouseleave', () => {
-        autoplayInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(currentIndex);
-        }, 4000);
+    gallerySlider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    gallerySlider.addEventListener('mouseleave', () => {
+        autoplayInterval = setInterval(() => goToSlide(currentIndex + 1), 4000);
     });
 
-    // Поддержка свайпа на телефоне
+    // Свайп на мобильных
     let startX = 0;
     wrapper.addEventListener('touchstart', e => startX = e.touches[0].clientX);
     wrapper.addEventListener('touchend', e => {
         const endX = e.changedTouches[0].clientX;
-        if (endX < startX - 50) {
-            // свайп влево → следующий
-            currentIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(currentIndex);
-        } else if (endX > startX + 50) {
-            // свайп вправо → предыдущий
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            goToSlide(currentIndex);
-        }
+        if (endX < startX - 50) goToSlide(currentIndex + 1);
+        else if (endX > startX + 50) goToSlide(currentIndex - 1);
     });
+
+    // Инициализация
+    goToSlide(0);
 });
 
 
