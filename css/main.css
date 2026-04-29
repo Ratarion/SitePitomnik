@@ -47,8 +47,10 @@ header {
     font-weight: 700;
     background: linear-gradient(90deg, rgba(214, 178, 60) 0%, rgba(253, 228, 131)100%);
     background-clip: text;
+    display: inline-block;
     color: transparent;
-    line-height: 1;
+    line-height: 1.2;
+    padding-bottom: 5px;
 }
 /* ===================== HERO ===================== */
 .home {
@@ -519,6 +521,10 @@ section {
 }
 
 /* ===================== НАШИ ЧЕМПИОНЫ — СЛАЙДЕР ===================== */
+.chapions{
+    color: #0a0b14;
+}
+
 .champions-slider {
     position: relative;
     max-width: 1200px;
