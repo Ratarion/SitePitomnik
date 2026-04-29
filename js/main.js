@@ -114,8 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
     const total = cards.length;
+    const GAP = 40;
 
-    // Создаём точки
+    if (total === 0) return;
+
     dotsContainer.innerHTML = '';
     for (let i = 0; i < total; i++) {
         const dot = document.createElement('div');
@@ -124,18 +126,25 @@ document.addEventListener('DOMContentLoaded', () => {
         dot.addEventListener('click', () => goToSlide(i));
         dotsContainer.appendChild(dot);
     }
+
     const dots = dotsContainer.querySelectorAll('.litter-dot');
 
     function goToSlide(index) {
         currentIndex = (index + total) % total;
-        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        const offset = currentIndex * (cardWidth + GAP);
+
+        wrapper.style.transform = `translateX(-${offset}px)`;
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
     }
 
     prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
     nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
-    // Автопрокрутка
     let autoInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
 
     slider.addEventListener('mouseenter', () => clearInterval(autoInterval));
@@ -143,7 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
         autoInterval = setInterval(() => goToSlide(currentIndex + 1), 5000);
     });
 
-    // Инициализация
+    window.addEventListener('resize', () => goToSlide(currentIndex));
+
     goToSlide(0);
 });
 
@@ -175,8 +185,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function goToSlide(index) {
         currentIndex = (index + total) % total;
-        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+
+        const gap = 40;
+
+        // ширина одной карточки
+        const cardWidth = cards[0].getBoundingClientRect().width;
+
+        // смещение = ширина карточки + gap
+        const offset = currentIndex * (cardWidth + gap);
+
+        wrapper.style.transform = `translateX(-${offset}px)`;
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
     }
 
     prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
